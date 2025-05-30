@@ -4,11 +4,11 @@ import { Home, Login, Navbar, Footer } from "./components/exportComp.js";
 
 function App() {
   return (
-    <div>
+    <div className="h-screen overflow-hidden flex flex-col">
       <header>
         <Navbar />
       </header>
-      <main>
+      <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
