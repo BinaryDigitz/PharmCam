@@ -8,6 +8,7 @@ import authRouter from "./routes/auth.route.js";
 import pharmacyRouter from "./routes/pharmacy.route.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import medicationRouter from "./routes/medication.route.js";
+import publicRouter from "./routes/public.route.js";
 
 const app = express();
 
@@ -40,7 +41,7 @@ app.use("/image", express.static("image"));
 
 // Home route
 app.get("/", (req, res) =>
-  res.json({ success: true, message: "Hello world", statusCode: 200 })
+  res.json({ success: true, message: "All good! Do not worry.", statusCode: 200 })
 );
 
 // Handle invalid URL
@@ -48,6 +49,7 @@ app.get("/", (req, res) =>
 app.use("/api/auth", authRouter);
 app.use("/api/v1/pharmacy", pharmacyRouter);
 app.use("/api/v1/medications", medicationRouter);
+app.use('/api/v0', publicRouter)
 
 // ERROR HANDLER
 app.use(errorHandler);
