@@ -1,33 +1,37 @@
 
-import React, { useState } from "react";
-import { search, close } from "../assets/assets";
+import React, { useContext, useState } from "react";
+import { search, placeholder_img } from "../assets/assets";
+import AppContext from "../context/AppContext";
 
 function Searchbar() {
+  const { setShowSearchBar } = useContext(AppContext)
   const [searchInput, setSearchInput] = useState("");
   const [isActive, setSActive] = useState(false);
 
   function handleActive() {
+    setShowSearchBar(true)
     setSActive(!isActive)
   }
 
   return (
-    <div className="grid place-items-center w-full">
-      <div className="flex border border-green-900/40 rounded  justify-between gap-4  w-sm lg:w-lg ">
+    <div className="grid place-items-cente  overflow-hidden mb-2">
+      <div className="flex border border-green-900/40 rounded-lg overflow-hidden flex-nowrap justify-between gap-4  sm:max-w-[90%] lg:w-sm lg:mx-12 ">
         <label
           onClick={ handleActive }
           htmlFor="search"
-          className=" p-2 rounded bg-black/10 "
+          className=" p-2  bg-black"
         >
-          <Image
+          <img
             src={search}
             width={30}
             className="cursor-pointer"
-            alt="search icon"
+            alt={placeholder_img}
           />
         </label>
         <input
           type="text"
           id="search"
+          onFocus={()=>setShowSearchBar(true)}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           className="text-sm placeholder:text-green-900 border-none flex-1 outline-none placeholder:italic"
@@ -37,14 +41,9 @@ function Searchbar() {
         <button
           onClick={() => setSearchInput("")}
           title="Clear search"
-          className="p-2 rounded cursor-pointer hover:bg-green-400/20"
+          className="p-2 rounded cursor-pointer "
         >
-          <Image
-            src={search}
-            width={30}
-            alt="clear search"
-            className=" rounded  "
-          />
+          Search
         </button>
       </div>
     </div>

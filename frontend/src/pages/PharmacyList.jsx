@@ -3,9 +3,11 @@ import { pharmacies } from "../assets/data";
 import { Link } from "react-router-dom";
 import AppContext from "../context/AppContext";
 import FilterTown from "../components/FilterTown";
+import Searchbar from "../components/Searchbar";
+import DisplaySearch from "../components/DisplaySearch";
 
 function PharmacyList() {
-  const { town, navigate } = useContext(AppContext);
+  const { town, navigate, showSearchBar } = useContext(AppContext);
   const [selectedPharmacies, setSelectedPharmacies] = useState([]);
   const [pharmacyState, setPharmacyState] = useState("all");
   const [region, setRegion] = useState("");
@@ -13,11 +15,10 @@ function PharmacyList() {
 
   function handleSelect(event) {
     setCity(event.target.value);
-     setPharmacyState("all");
+    setPharmacyState("all");
     const result =
-        region &&
-        region?.pharmacies.filter((item) => item.town === city);
-      setSelectedPharmacies(result);
+      region && region?.pharmacies.filter((item) => item.town === city);
+    setSelectedPharmacies(result);
   }
   function handleOpenPharmacies() {
     setPharmacyState("open");
@@ -67,9 +68,10 @@ function PharmacyList() {
   }
   return (
     <div className="mt-4 p-4 rounded  bg-white/20 relative">
-      {/* <h1 className="mano heading3 text-center mt-4 lg:mt-4 overflow-y-scroll">
-        Pharmacies in Bamenda
-      </h1> */}
+      <h1 className="montserrat font-bold text-lg lg:text-2xl text-center mb-4">
+        {town.region.toUpperCase()} REGION
+      </h1>
+      <Searchbar />
       <div className="text-sm flex gap-4 bg-green-950/90 shadow-lg justify-cente items-center justify-center lg:justify-start p-4 rounded lg:w-6xl mx-auto">
         <button
           title="View all pharmacies"
@@ -98,6 +100,13 @@ function PharmacyList() {
           handleSelect={handleSelect}
           filterCity={city}
         />
+      </div>
+      <div
+        className={`${
+          showSearchBar ? "absolute" : "hidden"
+        }  z-40 bg-white left-[50%] top-28 border rounded-lg -translate-x-[50%] min-w-[95%] backdrop:blur-5xl`}
+      >
+        <DisplaySearch />
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-2 overflow-y-scroll p-4 place-items-center lg:w-6xl mx-auto gap-2 mt-8 border border-gray-300 shadow-lg rounded">
         {selectedPharmacies &&
