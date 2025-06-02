@@ -7,7 +7,7 @@ import {
   Footer,
   Loading,
 } from "./components/exportComp.js";
-import { SelectPreferences, PharmacyList, PharmacyDetails } from "./components/LazyExport.jsx";
+import { SelectPreferences, PharmacyList, PharmacyDetails, SemiAuthPharmacy } from "./components/LazyExport.jsx";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/select-preference" element={<SelectPreferences />} />
             <Route path="/pharmacy-list" element={<PharmacyList />} />
+            <Route path="/semi-auth-pharmacy" element={<SemiAuthPharmacy />} />
             <Route path="/pharmacy/:region/:town/:pharmacyId" element={<PharmacyDetails />} />
           </Routes>
         </Suspense>

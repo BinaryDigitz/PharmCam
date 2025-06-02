@@ -1,14 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { france_flag, placeholder_img, uk_flag } from "../assets/assets";
 import AppContext from "../context/AppContext";
 
 function Language() {
   const { lang, setLang } = useContext(AppContext);
 
-  const languages = [
-    { name: "EN", flag: uk_flag },
-    { name: "FR", flag: france_flag },
-  ];
   return (
     <section className=" bg-white/20 relative group border border-gray-200 text-green-950 hover:bg-white/50 trans shadow-green-400/20 shadow-md px-2 py-2 rounded cursor-pointer">
       <button
