@@ -11,6 +11,7 @@ import menu from './menu.png'
 import personnel from './pharmacist.png'
 import verified from './verified.png'
 import placeholder_img from './verified.png'
+import banginic_logo from './banginic_logo.png'
 
 export { apple_logo, google_logo}
 
@@ -18,7 +19,7 @@ export { apple_logo, google_logo}
 
 
 export { search,
-    back, call, close, direction, email, location, menu, personnel, verified, placeholder_img
+    back, call, close, direction, banginic_logo, email, location, menu, personnel, verified, placeholder_img
 }
 export const cities = [ 'Bamenda', 'Douala', 'Tiko', 'Limbe', 'Buea', 'Kumba', 'Yaounde', 'Edea', 'Bertoua', 'Ebolowa', 'Garoua', 'Baffoussam', 'Nkongssamba']
 

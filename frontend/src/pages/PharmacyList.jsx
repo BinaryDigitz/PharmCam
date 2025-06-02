@@ -111,7 +111,7 @@ function PharmacyList() {
       <section className="grid grid-cols-1 lg:grid-cols-2 overflow-y-scroll p-4 place-items-center lg:w-6xl mx-auto gap-2 mt-8 border border-gray-300 shadow-lg rounded">
         {selectedPharmacies &&
           selectedPharmacies.map((pharmacy) => (
-            <Link to={`/pharmacies/${pharmacy.id}`} key={pharmacy.id}>
+            <Link to={`/pharmacy/${pharmacy.region}/${pharmacy.town}/${pharmacy.id}`} key={pharmacy.id}>
               <article
                 className={`p-4 rounded-xl min-w-[360px] md:w-lg  ${
                   pharmacy.onCall

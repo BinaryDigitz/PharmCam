@@ -16,7 +16,6 @@ function WorkingDays() {
     }
     return days;
   }
-  console.log(days);
   getNext7Days();
   return (
     <div className="flex flex-col gap-2 h-full ">
