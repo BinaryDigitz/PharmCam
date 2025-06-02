@@ -22,8 +22,8 @@ function SelectPreferences() {
 
   return (
     <div>
-      <Title text1="Select" text2={"Preference"} />
-      <section className="border border-gray-400 rounded-lg mt-8 px-4 py-8 w-sm mx-auto">
+      <Title text1="SELECT" text2={"TOWN"} />
+      <section className="border border-gray-900 shadow rounded-lg mt-8 px-4 py-8 w-[90%] lg:w-sm mx-auto">
         <Logo />
         <p className="text-gray-500 text-sm px-4">
           Please select preferences using the form.
@@ -78,7 +78,9 @@ function SelectPreferences() {
                 ))}
             </select>
           </div>
-          <button className="mt-4 bg-black hover:bg-black/90 w-full text-white py-2 rounded cursor-pointer">
+          <button
+          type="submit"
+           className="mt-4 bg-black hover:bg-black/90 w-full text-white py-2.5 rounded cursor-pointer">
             Set Preference
           </button>
         </form>

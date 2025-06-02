@@ -6,7 +6,7 @@ function AppProvider({ children }) {
     const navigate = useNavigate()
  const [ town, setTown    ] =  useState({region: '', town: ''})
     
-console.log(town);
+
 
     const values = {
         navigate,
