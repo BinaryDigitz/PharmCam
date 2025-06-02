@@ -4,7 +4,7 @@ import HeroCTA from "./HeroCTA";
 function Hero() {
   return (
     <div className="px-8 grid place-items-center text-center mt-30 md:mt-12 2xl:mt-34 relative">
-      <h2 className="heading2 lg:w-[50%]">
+      <h2 className="heading2 montserrat lg:w-[50%]">
         YOUR TRUSTED PARTNER IN <span className="text-green-900">HEALTH</span> &
         WELLNESS.
       </h2>

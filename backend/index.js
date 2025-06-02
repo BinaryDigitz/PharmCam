@@ -41,7 +41,7 @@ app.use("/image", express.static("image"));
 
 // Home route
 app.get("/", (req, res) =>
-  res.json({ success: true, message: "All good! Do not worry.", statusCode: 200 })
+  res.json({ success: true, message: "Pharmcam API is running", statusCode: 200 })
 );
 
 // Handle invalid URL

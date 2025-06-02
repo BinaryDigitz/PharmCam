@@ -13,6 +13,7 @@ export { default as Hero } from './Hero'
 export { default as Back } from './Back'
 export { default as Searchbar } from './Searchbar'
 export { default as DisplaySearch } from './DisplaySearch'
+export { default as Title } from './Title'
 
 
 // pages

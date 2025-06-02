@@ -1,6 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Login, Navbar, Footer } from "./components/exportComp.js";
+import {
+  Home,
+  Login,
+  Navbar,
+  Footer,
+  Loading,
+} from "./components/exportComp.js";
+import { SelectPreferences, PharmacyList } from "./components/LazyExport.jsx";
 
 function App() {
   return (
@@ -9,10 +16,14 @@ function App() {
         <Navbar />
       </header>
       <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/select-preference" element={<SelectPreferences />} />
+            <Route path="/pharmacy-list" element={<PharmacyList />} />
+          </Routes>
+        </Suspense>
       </main>
       <footer>
         <Footer />
