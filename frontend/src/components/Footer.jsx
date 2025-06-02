@@ -3,7 +3,7 @@ import { banginic_logo, verified } from "../assets/assets";
 
 function Footer() {
   return (
-    <section className="text-center text-xs text-green-950/70 flex justify-center gap-4 my-2">
+    <section className="text-center text-sm text-green-950/70 flex justify-center gap-4 my-2">
       <p>Developed & Powered by</p>
       <a
         href="http://banginic-1.onrender.com"

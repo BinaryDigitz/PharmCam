@@ -68,38 +68,40 @@ function PharmacyList() {
   }
   return (
     <div className="mt-4 p-4 rounded  bg-white/20 relative">
-      <h1 className="montserrat font-bold text-lg lg:text-2xl text-center mb-4">
-        {town.region.toUpperCase()} REGION
-      </h1>
-      <Searchbar />
-      <div className="text-sm flex gap-4 bg-green-950/90 shadow-lg justify-cente items-center justify-center lg:justify-start p-4 rounded lg:w-6xl mx-auto">
-        <button
-          title="View all pharmacies"
-          onClick={() => handleAllPharmacies("all")}
-          className={`py-2 px-4 rounded text-sm ${
-            pharmacyState === "all"
-              ? "bg-green-700 text-green-100"
-              : "bg-white text-green-950"
-          }  cursor-pointer  lg:hover:scale-x-105 trans`}
-        >
-          All
-        </button>
-        <button
-          title="View open pharmacies"
-          onClick={() => handleOpenPharmacies("open")}
-          className={`py-2 px-4 rounded  ${
-            pharmacyState === "open"
-              ? "bg-green-700 text-green-100"
-              : "bg-white text-green-950"
-          }  cursor-pointer lg:hover:scale-x-105 trans`}
-        >
-          Currently Open
-        </button>
-        <FilterTown
-          region={town.region}
-          handleSelect={handleSelect}
-          filterCity={city}
-        />
+      <div className="bg-green-900 p-4 rounded-lg">
+        <h1 className="montserrat font-bold text-lg lg:text-2xl text-center mb-4 text-green-100">
+          {town.region.toUpperCase()} REGION
+        </h1>
+        <Searchbar />
+        <div className="text-sm flex gap-3 bg-green-950/50 shadow-lg justify-cente items-center justify-center lg:justify-start p-4 rounded lg:w-6xl mx-auto">
+          <button
+            title="View all pharmacies"
+            onClick={() => handleAllPharmacies("all")}
+            className={`py-3 px-4 rounded text-sm ${
+              pharmacyState === "all"
+                ? "bg-green-700 text-green-100"
+                : "bg-white text-green-950"
+            }  cursor-pointer  lg:hover:scale-x-105 trans`}
+          >
+            All
+          </button>
+          <button
+            title="View open pharmacies"
+            onClick={() => handleOpenPharmacies("open")}
+            className={`py-3 px-4 rounded  ${
+              pharmacyState === "open"
+                ? "bg-green-700 text-green-100"
+                : "bg-white text-green-950"
+            }  cursor-pointer lg:hover:scale-x-105 trans`}
+          >
+            Currently Open
+          </button>
+          <FilterTown
+            region={town.region}
+            handleSelect={handleSelect}
+            filterCity={city}
+          />
+        </div>
       </div>
       <div
         className={`${
@@ -111,7 +113,10 @@ function PharmacyList() {
       <section className="grid grid-cols-1 lg:grid-cols-2 overflow-y-scroll p-4 place-items-center lg:w-6xl mx-auto gap-2 mt-8 border border-gray-300 shadow-lg rounded">
         {selectedPharmacies &&
           selectedPharmacies.map((pharmacy) => (
-            <Link to={`/pharmacy/${pharmacy.region}/${pharmacy.town}/${pharmacy.id}`} key={pharmacy.id}>
+            <Link
+              to={`/pharmacy/${pharmacy.region}/${pharmacy.town}/${pharmacy.id}`}
+              key={pharmacy.id}
+            >
               <article
                 className={`p-4 rounded-xl min-w-[360px] md:w-lg  ${
                   pharmacy.onCall
@@ -142,7 +147,7 @@ function PharmacyList() {
                   </p>
                   <div>
                     {pharmacy.isOpen ? (
-                      <div className="text-xs italic text-green-700">
+                      <div className="text-xs text-green-700">
                         <p>Currently open</p>
                         <div className="text-gray-600">
                           {pharmacy.isOnCall ? (
@@ -156,7 +161,7 @@ function PharmacyList() {
                         </div>
                       </div>
                     ) : (
-                      <div className="text-xs italic text-gray-600">
+                      <div className="text-xs text-gray-600">
                         <p>Currently closed</p>
                         <p className="text-gray-600">
                           <span>Opens at </span>

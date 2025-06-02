@@ -15,11 +15,11 @@ function Searchbar() {
 
   return (
     <div className="grid place-items-cente  overflow-hidden mb-2">
-      <div className="flex border border-green-900/40 rounded-lg overflow-hidden flex-nowrap justify-between gap-4  sm:max-w-[90%] lg:w-sm lg:mx-12 ">
+      <div className="flex border border-green-950 rounded-lg overflow-hidden flex-nowrap justify-between gap-4  sm:max-w-[90%] lg:w-sm lg:mx-12 ">
         <label
           onClick={ handleActive }
           htmlFor="search"
-          className=" p-2  bg-black"
+          className=" p-2  bg-green-950/50"
         >
           <img
             src={search}
@@ -34,14 +34,14 @@ function Searchbar() {
           onFocus={()=>setShowSearchBar(true)}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          className="text-sm placeholder:text-green-900 border-none flex-1 outline-none placeholder:italic"
+          className="text-sm placeholder:text-green-100/70 border-none flex-1 outline-none text-green-50"
           maxLength={10}
           placeholder="Search medication or pharmacy"
         />
         <button
           onClick={() => setSearchInput("")}
           title="Clear search"
-          className="p-2 rounded cursor-pointer "
+          className="p-2 rounded cursor-pointer text-green-100"
         >
           Search
         </button>

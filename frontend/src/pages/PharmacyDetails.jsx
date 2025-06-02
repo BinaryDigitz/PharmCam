@@ -48,12 +48,12 @@ function PharmacyDetails() {
       </div>
       {/* <h1 className="heading3 hidden md:block mb-4 mano text-center">PHARMACY DETAILS</h1> */}
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 justify-around lg:w-[70%] mx-auto">
-        <section className=" p-4 rounded-xl md:w-sm border border-green-950/20 text-[14px] max-h-[330px] lg:text-[16px]">
-          <div className="flex gap-4 items-center bg-green-500/10 p-4 rounded">
+        <section className=" p-4 rounded-xl md:w-sm bg-gradient-to-b  from-green-700/80 to-green-50 text-[16px] max-h-[330px] lg:text-[16px]">
+          <div className="flex gap-4 items-center bg-gradient-to-b  from-green-700/70 to-green-950 p-4 rounded">
             <img src={verified} width={25} alt={placeholder_img} />
-            <p className="text-lg lg:text-xl font-bold">{pharmacy?.name}</p>
+            <p className="text-lg lg:text-xl font-bold text-green-100">{pharmacy?.name}</p>
           </div>
-          <div className="flex flex-col gap-2 mt-4">
+          <div className="flex flex-col gap-2 mt-4 text-green-">
             <div className="flex gap-4 items-center ">
               <img src={personnel} width={25} alt={placeholder_img} />
               <p className="heading">{pharmacy?.pharmacist}</p>
@@ -72,7 +72,7 @@ function PharmacyDetails() {
             </div>
             <button
             title="Open map to pharmacy"
-             className="flex gap-4 items-center cursor-pointer rounded-lg mt-4 bg-black hover:bg-black/90 trans text-green-100 py-2 justify-center">
+             className="flex gap-4 items-center cursor-pointer rounded-lg mt-4 bg-black hover:bg-black/90 trans text-green-100 py-3 justify-center">
               <img src={direction} width={25} alt={placeholder_img} />
               <p className="heading">Direction</p>
             </button>

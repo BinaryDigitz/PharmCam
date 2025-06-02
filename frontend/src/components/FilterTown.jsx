@@ -10,7 +10,7 @@ function FilterTown({ region, filterCity, handleSelect }) {
       </label>
       <select
         title="Filter town"
-        className={`py-2 px-1 rounded  bg-white text-green-950" cursor-pointer lg:hover:scale-x-105 trans`}
+        className={`py-3 px-1 rounded  bg-white text-green-950" cursor-pointer lg:hover:scale-x-105 trans`}
         onChange={handleSelect}
         value={filterCity}
         name="city"

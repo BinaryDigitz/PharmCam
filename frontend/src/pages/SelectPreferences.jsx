@@ -23,12 +23,12 @@ function SelectPreferences() {
   return (
     <div>
       <Title text1="SELECT" text2={"TOWN"} />
-      <section className="border border-gray-900 shadow rounded-lg mt-8 px-4 py-8 w-[90%] lg:w-sm mx-auto">
+      <section className="border border-gray-300 shadow rounded-lg my-8 px-4 py-8 w-[90%] lg:w-sm mx-auto">
         <Logo />
-        <p className="text-gray-500 text-sm px-4">
+        <p className="text-gray-500  px-4">
           Please select preferences using the form.
         </p>
-        <form onSubmit={handleSubmit} className="px-4 text-sm">
+        <form onSubmit={handleSubmit} className="px-4 text-s">
           <div className="mt-8 mb-4">
             <label htmlFor="region" className="block mx-0.5">
               Region
@@ -42,7 +42,7 @@ function SelectPreferences() {
                 setSelectedTown({ ...selectedTown, region: e.target.value })
               }
               autoComplete="Region"
-              className="border border-gray-300 pl-2 w-full py-2 bg-transparent rounded mt-1 cursor-pointer "
+              className="border border-gray-300 pl-2 w-full py-3 bg-transparent rounded mt-1 cursor-pointer "
             >
               <option value="">Please Select Region</option>
               {cameroon.map((item) => (
@@ -67,7 +67,7 @@ function SelectPreferences() {
               autoComplete="Town"
               className={`${
                 !selectedTown.region ? "cursor-not-allowed" : "cursor-pointer"
-              } border border-gray-300 pl-2 w-full py-2 bg-transparent rounded mt-1 cursor-pointe`}
+              } border border-gray-300 pl-2 w-full py-3 bg-transparent rounded mt-1 cursor-pointe`}
             >
               <option value="">Please Select Town</option>
               {city &&
@@ -80,7 +80,7 @@ function SelectPreferences() {
           </div>
           <button
           type="submit"
-           className="mt-4 bg-black hover:bg-black/90 w-full text-white py-2.5 rounded cursor-pointer">
+           className="mt-4 bg-green-900 hover:bg-green-950/40 w-full text-green-100 py-3 rounded cursor-pointer">
             Set Preference
           </button>
         </form>
