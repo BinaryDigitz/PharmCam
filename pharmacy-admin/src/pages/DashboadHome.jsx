@@ -3,7 +3,7 @@ import { placeholder_img, uk_flag } from '../assets/assets'
 
 function DashboadHome() {
   return (
-    <section className="w-full flex justify-center items-center">
+    <section className="w-full flex justify-center items-center h-full">
         <div>
           <img
             src={uk_flag}

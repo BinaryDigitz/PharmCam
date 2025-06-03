@@ -22,7 +22,7 @@ function DashboadSidebar() {
   ];
 
   return (
-    <section className="hidden lg:block  h-full w-1/5 bg-green-950">
+    <section className="hidden lg:block rounded-md shadow-lg h-full w-1/5 bg-green-950 mt-8">
       <div className="p-4">
         {navlinks.map((item) => (
           <div
