@@ -17,5 +17,6 @@ export { default as HeroCTA } from './HeroCTA'
 // pages
 export { default as Login } from '../pages/Login'
 export { default as Home } from '../pages/Home'
+export { default as Dashboard } from '../pages/Dashboard'
 
 // lib

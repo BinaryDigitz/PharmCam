@@ -4,7 +4,7 @@ import { HeroCTA } from './exportComp'
 
 function Hero() {
   return (
-    <div className="px-8 grid place-items-center text-center  mt-16 md:mt-12 2xl:mt-34 fixed">
+    <div className="px-8 grid place-items-center text-center  mt-16 md:mt-12 2xl:mt-34 ">
       <h2 className="heading2 montserrat lg:w-[70%]">
         YOUR TRUSTED PARTNER IN <span className="text-green-900">HEALTH</span> &
         WELLNESS.

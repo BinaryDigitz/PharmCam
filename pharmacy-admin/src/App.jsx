@@ -2,19 +2,22 @@ import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Home, Loading, Navbar, Footer, Login } from "./components/exportComp";
+import './App.css'
+import { RegisterPharmacy } from "./components/LazyExport";
 
 function App() {
   return (
-    <div className="h-full overflow-hidde">
+    <div className="h-screen overflow-hidde container">
       <header>
         <Navbar />
       </header>
-      <main className=" h-[77dvh] lg:h-[75dvh] 2xl:h-[80dvh]">
+      <main className=" ">
         <ToastContainer />
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register-pharmacy" element={<RegisterPharmacy />} />
           </Routes>
         </Suspense>
       </main>
