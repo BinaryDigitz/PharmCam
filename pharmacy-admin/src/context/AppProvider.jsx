@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom'
 
 function AppProvider({children}) {
   const navigate = useNavigate()
-  const [ user, setUser ] = useState(false)
+  const [ user, setUser ] = useState(true)
   const [ lang, setLang ] = useState('EN')
-  const [ isLoggedIn, setLogin ] = useState(false)
+  const [ isLoggedin, setLogin ] = useState(true)
 
     const values = {
       user, setUser,
-      isLoggedIn, setLogin,
+      isLoggedin, setLogin,
       navigate,
       lang, setLang
         
