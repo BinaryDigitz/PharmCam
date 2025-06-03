@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Courgette&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Prata');
+
+@import "tailwindcss";
+*{
+    font-family: 'Outfit', sans-serif, UI;
+}
+.montserrat{
+    font-family: 'Montserrat', 'Outfin', sans-serif, UI;
+}
+body{
+    height: 100dvh;
+    width: 100dvw;
+    
+}
