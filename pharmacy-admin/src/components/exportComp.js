@@ -12,6 +12,7 @@ export { default as Back } from './Back'
 export { default as Title } from './Title'
 export { default as User } from './User'
 export { default as HeroCTA } from './HeroCTA'
+export { default as DashboardSidebar } from './DashboadSidebar'
 
 
 // pages
