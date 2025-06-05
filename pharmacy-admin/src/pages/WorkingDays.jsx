@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { UpdateWorkingDay } from "../components/LazyExport";
+import { Title } from '../components/exportComp'
 
 function WorkingDays() {
   const [ showWorkingdayForm, setShowWorkingdayForm ] = useState(false)
@@ -63,7 +64,7 @@ function WorkingDays() {
   ];
   return (
     <div className="mx-auto max-w-lg lg:mt-8 relative">
-      <h1 className="heading3 text-center ">Working Days</h1>
+      <Title text1={'Update'} text2={'Days'}/>
       <button 
       onClick={() => setShowWorkingdayForm(true)}
       className="my-4 border rounded px-4 py-3 cursor-pointer hover:bg-gray-100">Update Working day</button>
