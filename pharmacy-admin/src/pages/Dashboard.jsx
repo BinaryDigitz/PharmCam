@@ -14,7 +14,7 @@ import {
 
 function Dashboard() {
   return (
-    <div className="h-full lg:flex mx-auto pl-3">
+    <div className="h-full lg:flex mx-auto pl-3 overflow-auto">
       <DashboardSidebar />
       <div className=" w-full flex-1 bg-greem-50/20">
         <React.Suspense fallback={<Loading />}>

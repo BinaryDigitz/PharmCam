@@ -7,6 +7,7 @@ const OnCall = lazy(() => import("../pages/OnCall"));
 const WorkingDays = lazy(() => import("../pages/WorkingDays"));
 const Profile = lazy(() => import("../pages/Profile"));
 const DashboadHome = lazy(() => import("../pages/DashboadHome"));
+const UpdateWorkingDay = lazy(() => import("./UpdateWorkingDay"));
 
 export {
   RegisterPharmacy,
@@ -16,4 +17,5 @@ export {
   Profile,
   WorkingDays,
   DashboadHome,
+  UpdateWorkingDay
 };
