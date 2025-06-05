@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Title from '../components/Title'
 import { UpdateCallDays } from '../components/LazyExport'
+import { add, placeholder_img } from '../assets/assets'
 
 function OnCall() {
 const [ showCallForm, setShowCallForm ] = useState(false)
@@ -15,7 +16,9 @@ const [ showCallForm, setShowCallForm ] = useState(false)
       <Title text1={'On'} text2={'Call'}/>
              <button
              onClick={() => setShowCallForm(true)}
-              className='border my-4 rounded px-4 py-3 cursor-pointer hover:bg-gray-100'>Edith On-call days</button>
+              className='border my-4 rounded px-4 py-3 flex items-center gap-2 cursor-pointer hover:bg-gray-100'>
+                <img src={add} width={25} loading='lazy' alt={placeholder_img} />
+                Edith On-call days</button>
 
        <div className='w-sm lg:w-lg mx-auto mt-4 border p-4 rounded border-gray-300'>
           {

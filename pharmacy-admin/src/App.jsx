@@ -7,7 +7,7 @@ import { RegisterPharmacy, AddMedication, Medicaions, OnCall, Profile, WorkingDa
 
 function App() {
   return (
-    <div className="h-screen container bg-gradien-to-br from-green-100 to-green-50 border">
+    <div className="h-screen container bg-gradien-to-br from-green-100 to-green-50 ">
       <header className="">
         <Navbar />
       </header>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UpdateWorkingDay } from "../components/LazyExport";
 import { Title } from '../components/exportComp'
+import { placeholder_img, add } from "../assets/assets";
 
 function WorkingDays() {
   const [ showWorkingdayForm, setShowWorkingdayForm ] = useState(false)
@@ -67,7 +68,9 @@ function WorkingDays() {
       <Title text1={'Update'} text2={'Days'}/>
       <button 
       onClick={() => setShowWorkingdayForm(true)}
-      className="my-4 border rounded px-4 py-3 cursor-pointer hover:bg-gray-100">Update Working day</button>
+      className="my-4 border rounded px-4 py-3 cursor-pointer hover:bg-gray-100 flex items-center gap-2">
+        <img src={add} width={20} loading="lazy" alt={placeholder_img} />
+        Update Working day</button>
       <div className="border rounded p-2 border-gray-300">
         {workingDays.map((day) => (
           <article

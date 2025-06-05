@@ -9,6 +9,9 @@ const Profile = lazy(() => import("../pages/Profile"));
 const DashboadHome = lazy(() => import("../pages/DashboadHome"));
 const UpdateWorkingDay = lazy(() => import("./UpdateWorkingDay"));
 const UpdateCallDays = lazy(() => import("./UpdateCallDays"));
+const UpdateDrug = lazy(() => import("./UpdateDrug"));
+const UpdateProfile = lazy(() => import("./UpdateProfile"));
+const DeleteDialogue = lazy(() => import("./DeleteDialogue"));
 
 export {
   RegisterPharmacy,
@@ -19,5 +22,8 @@ export {
   WorkingDays,
   DashboadHome,
   UpdateWorkingDay,
-  UpdateCallDays
+  UpdateCallDays,
+  UpdateDrug,
+  UpdateProfile,
+  DeleteDialogue
 };

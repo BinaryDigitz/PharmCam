@@ -20,6 +20,10 @@ import home from './home.png'
 import admin from './admin.png'
 import log_out  from './log_out.png'
 import online from './online.png'
+import send from './send.png'
+import add from './add.png'
+import remove from './delete.png'
+
 
 export { apple_logo, google_logo}
 
@@ -27,7 +31,7 @@ export { apple_logo, google_logo}
 
 
 export { search,
-    online, calender, drugs, home, admin, log_out,
+    online, calender, drugs, home, admin, log_out, remove, send, add,
     back, call, close, uk_flag, france_flag, direction, banginic_logo, email, location, menu, personnel, verified, placeholder_img
 }
 export const cities = [ 'Bamenda', 'Douala', 'Tiko', 'Limbe', 'Buea', 'Kumba', 'Yaounde', 'Edea', 'Bertoua', 'Ebolowa', 'Garoua', 'Baffoussam', 'Nkongssamba']
