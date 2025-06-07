@@ -7,12 +7,16 @@ function AppProvider({children}) {
   const [ user, setUser ] = useState(true)
   const [ lang, setLang ] = useState('EN')
   const [ isLoggedin, setLogin ] = useState(true)
+  const [ showLoginForm, setLoginForm ] = useState(false)
+  const [ showRegistrationForm, setShowRegistrationForm ] = useState(false)
 
     const values = {
       user, setUser,
       isLoggedin, setLogin,
       navigate,
-      lang, setLang
+      lang, setLang,
+      showLoginForm, setLoginForm,
+      showRegistrationForm, setShowRegistrationForm
         
     }
   return <AppContext.Provider value={values}>

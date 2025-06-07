@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import AppContext from "../context/AppContext";
 
 function HeroCTA() {
-  const { isLoggedin, navigate } = useContext(AppContext);
+  const { isLoggedin, navigate, setLoginForm } = useContext(AppContext);
    const pharmacy_url = import.meta.env.VITE_PHARMACY_FRONTEND_URL;
   return (
     <div className="mt-8">
       {!isLoggedin ? (
         <button
-          onClick={() => navigate("/login")}
+          onClick={() => setLoginForm(true)}
           title="Login page"
           className="bg-black text-green-50 px-6 montserrat rounded py-3 cursor-pointer hover:bg-black/80 trans"
         >
@@ -16,7 +16,7 @@ function HeroCTA() {
         </button>
       ) : (
         <button
-          onClick={() => navigate("/dashboard")}
+         onClick={() => setLoginForm(true)}
           title="Go to home page"
           className="bg-black text-green-50 px-6 montserrat rounded py-3 cursor-pointer hover:bg-black/80 trans"
         >

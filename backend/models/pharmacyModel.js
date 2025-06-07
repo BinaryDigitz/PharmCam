@@ -3,17 +3,21 @@ import mongoose from 'mongoose'
 const pharmacySchema = new mongoose.Schema({
   pharmacyName: { type: String, required: true },
   pharmacistName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  emailAddress: { type: String, required: true },
   phoneNumber: { type: String, required: true },
   password: { type: String, required: true },
+  town:{
+    type:String,
+    required: true
+  },
+  region:{
+    type:String,
+    required: true
+  },
   location: {
-    address: String,
-    town: { type: String, required: true },
-    subdivision: String,
-    coordinates: {
-      latitude: Number,
-      longitude: Number
-    }
+    latitude: {type:Number, default: 0},
+   longitude: { type: Number, default: 0 }
+
   },
   operatingHours: {
     monday: { open: String, close: String, isOpen: { type: Boolean, default: true } },

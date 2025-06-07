@@ -6,17 +6,20 @@ import { JWT_SECRET } from "../config/env.js";
 
 // REGISTER PHARMACY ... /api/v1/pharmacy/register
 export const registerPharmacy = asyncHandler(async (req, res) => {
+
+  
   const {
     pharmacyName,
     pharmacistName,
-    email,
+    emailAddress,
     phoneNumber,
     password,
-    location,
+    town, region
+    
   } = req.body;
 
   // Check if pharmacy already exists
-  const existingPharmacy = await PharmacyModel.findOne({ email, phoneNumber });
+  const existingPharmacy = await PharmacyModel.findOne({ emailAddress, phoneNumber });
   if (existingPharmacy) {
     return res.json({
       success: false,
@@ -29,13 +32,13 @@ export const registerPharmacy = asyncHandler(async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   // Create new pharmacy
-  const pharmacy = new PharmacyModel({
+  const pharmacy = await PharmacyModel.create({
     pharmacyName,
     pharmacistName,
-    email,
+    emailAddress,
     phoneNumber,
+    town, region,
     password: hashedPassword,
-    location,
     operatingHours: {
       monday: { open: "08:00", close: "18:00", isOpen: true },
       tuesday: { open: "08:00", close: "18:00", isOpen: true },
@@ -51,7 +54,7 @@ export const registerPharmacy = asyncHandler(async (req, res) => {
 
   // Generate JWT token
   const token = jwt.sign(
-    { pharmacyId: pharmacy._id, email: pharmacy.email },
+    { pharmacyId: pharmacy._id, email: pharmacy.emailAddress },
     JWT_SECRET,
     { expiresIn: "24h" }
   );
@@ -64,17 +67,19 @@ export const registerPharmacy = asyncHandler(async (req, res) => {
     pharmacy: {
       id: pharmacy._id,
       pharmacyName: pharmacy.pharmacyName,
-      email: pharmacy.email,
+      email: pharmacy.emailAddress,
     },
   });
 });
 
-// LOGIN PHARMACY /api/v1/pharmacy/login
+// LOGIN PHARMACY /api/v1/pharmacy/sign-in
 export const loginPharmacy = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
+  const { emailAddress, password } = req.body;
+  console.log(req.body);
+  
 
   // Find pharmacy
-  const pharmacy = await PharmacyModel.findOne({ email });
+  const pharmacy = await PharmacyModel.findOne({ emailAddress });
   if (!pharmacy) {
     return res.json({ success: false, status: 400, message: "Invalid Email " });
   }
@@ -91,7 +96,7 @@ export const loginPharmacy = asyncHandler(async (req, res) => {
 
   // Generate JWT token
   const token = jwt.sign(
-    { pharmacyId: pharmacy._id, email: pharmacy.email },
+    { pharmacyId: pharmacy._id, email: pharmacy.emailAddress },
     process.env.JWT_SECRET || "your-secret-key",
     { expiresIn: "24h" }
   );
@@ -104,7 +109,7 @@ export const loginPharmacy = asyncHandler(async (req, res) => {
     pharmacy: {
       id: pharmacy._id,
       pharmacyName: pharmacy.pharmacyName,
-      email: pharmacy.email,
+      email: pharmacy.emailAddress,
     },
   });
 });
